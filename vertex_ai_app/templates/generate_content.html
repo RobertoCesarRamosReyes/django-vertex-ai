@@ -1,0 +1,24 @@
+<!-- templates/generate_content.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de Contenido con Vertex AI</title>
+</head>
+<body>
+    <h1>Generador de Contenido con Vertex AI</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="prompt_text">Ingresa tu prompt:</label><br>
+        <textarea id="prompt_text" name="prompt_text" rows="4" cols="50" placeholder="Escribe aquí tu solicitud..."></textarea><br><br>
+        <button type="submit">Generar Contenido</button>
+    </form>
+
+    {% if response_text %}
+        <h2>Contenido Generado:</h2>
+        <p>{{ response_text }}</p>
+    {% endif %}
+</body>
+</html>
